@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-function CountryInfo({ data, maxArea, detailed }) {
-
+function CountryInfo(props) {
+const { data, maxArea, detailed } = props;
   let ratio = data.area / maxArea * 100;
 
   return (
