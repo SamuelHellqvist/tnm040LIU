@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-function CountryInfo({ data, maxArea }) {
+function CountryInfo({ data, maxArea, detailed }) {
 
   let ratio = data.area / maxArea * 100;
 
@@ -11,11 +11,13 @@ function CountryInfo({ data, maxArea }) {
         <p><b id="bold">{data.name.common}</b> {data.area} km<sup>2</sup></p>
       </header>
       <div style={{ width: ratio + "%" }} className="hBar">
-
       </div>
+      <p>{detailed ? data.capital : ""}</p>
+      <p>{detailed ? data.subregion : ""}</p>
     </div>
 
   )
+
 }
 
 export default CountryInfo
