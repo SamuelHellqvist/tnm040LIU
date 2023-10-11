@@ -2,7 +2,7 @@ import React from 'react'
 
 
 function CountryInfo(props) {
-const { data, maxArea, detailed } = props;
+  const { data, maxArea, detailed } = props;
   let ratio = data.area / maxArea * 100;
 
   return (

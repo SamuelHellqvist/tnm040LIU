@@ -7,7 +7,7 @@
 
 #myContent {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 aside {
@@ -47,4 +47,12 @@ aside {
 
 .CountryBox:nth-child(odd) {
   background-color: rgba(220, 220, 220, 0.5);
+}
+
+#form{
+  color: aqua;
+}
+
+p{
+  color: black;
 }

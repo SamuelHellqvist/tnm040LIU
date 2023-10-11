@@ -1,30 +1,18 @@
-import './App.css'
-import countries from 'world-countries'
-import CountryInfo from './CountryInfo'
+import ReactDOM from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom"
+import CountryDetails from './CountryDetails'
+import CountryList from './CountryList'
 
-function App() {
-  const FifteenBiggest = countries.sort((a, b) => b.area - a.area).slice(0, 16).filter((country) => country.name.common != "Antarctica"); {/*Sorting all the countries in order of area */ }
-
-  const FiveBiggest = FifteenBiggest.slice(0, 5);
-  const NextTen = FifteenBiggest.slice(5, 15);
-  return (
-
-    <section id="myContent">
-      <aside>
-        {FiveBiggest.map((c) => (
-
-          <CountryInfo data={c} maxArea={FifteenBiggest[0].area} detailed={true} />
-        ))}
-      </aside>
-
-      <aside>
-        {NextTen.map((c) => (
-
-          <CountryInfo data={c} maxArea={FifteenBiggest[0].area} detailed={false} />
-        ))}
-      </aside>
-    </section>
-  )
+export default function App() {
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<CountryList />}></Route>
+                <Route path="/country/:cca3" element={<CountryDetails />}></Route>
+            </Routes>
+        </BrowserRouter>
+    );
 }
 
-export default App
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
