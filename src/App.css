@@ -49,14 +49,15 @@ aside {
   background-color: rgba(220, 220, 220, 0.5);
 }
 
-#form{
+#form {
   color: aqua;
 }
 
-p{
+p {
   color: black;
 }
 
-h1, h2{
+h1,
+h2 {
   color: black;
 }
