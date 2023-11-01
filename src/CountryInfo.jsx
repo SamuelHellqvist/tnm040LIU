@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
+import CountryDetails from './CountryDetails';
 
 
 function CountryInfo(props) {
@@ -6,15 +8,18 @@ function CountryInfo(props) {
   let ratio = data.area / maxArea * 100;
 
   return (
-    <div className="CountryBox">
-      <header>
-        <p><b id="bold">{data.name.common}</b> {data.area} km<sup>2</sup></p>
-      </header>
-      <div style={{ width: ratio + "%" }} className="hBar">
+    <Link to={"/country/" + props.data.cca3}>
+      <div className="CountryBox">
+        <header>
+          <p><b id="bold">{data.name.common}</b> {data.area} km<sup>2</sup></p>
+        </header>
+        <div style={{ width: ratio + "%" }} className="hBar">
+        </div>
+        <p>{detailed ? data.capital : ""}</p>
+        <p>{detailed ? data.subregion : ""}</p>
       </div>
-      <p>{detailed ? data.capital : ""}</p>
-      <p>{detailed ? data.subregion : ""}</p>
-    </div>
+    </Link>
+
 
   )
 

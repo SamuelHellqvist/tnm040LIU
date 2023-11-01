@@ -20,24 +20,24 @@ function CountryList() {
   }
 
   const filteredCountries = countries.sort((a, b) => b.area - a.area).filter((country) => country.name.common != "Antarctica").filter(matchSearch).slice(0, 5);
-  console.log(filteredCountries);
 
 
   function logInput(event) {
     setSearchString(event.target.value);
-    console.log(searchString);
   }
 
   return (
-
     <>
+
+      
+
       <input type="text" placeholder="Type here..." onChange={logInput} />
 
 
       <section id="myContent">
         {filteredCountries.map((c) => (
 
-          <CountryInfo data={c} maxArea={FifteenBiggest[0].area} detailed={true} />
+          <CountryInfo data={c} maxArea={FifteenBiggest[0].area} detailed={true} key={c.cca3} />
         ))}
 
       </section></>
